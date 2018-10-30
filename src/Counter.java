@@ -11,6 +11,9 @@ public class Counter {
         integerList.stream()
                 .distinct()
                 .peek(x -> out.print(x+": "))
-                .map(k -> integerList.stream().filter(v -> k == v).count()).forEach(out::println);
+                .map(k -> integerList.stream()
+                     .filter(v -> k == v)
+                     .count())
+                     .forEach(out::println);
     }
 }
